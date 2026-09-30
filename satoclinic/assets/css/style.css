@@ -278,6 +278,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   .header-inner{width:min(100% - 48px,1324px)}
   .global-nav{gap:24px;font-size:16px}
   .hero{height:min(62vw,901px)}
+  .hero h1{font-size:clamp(44px,7vw,100px);max-width:90%;}
   .hours{height:auto;padding:8vw 24px 9vw}
   .hours-table,.hours-notes{width:100%;max-width:1140px}
   .hours-table{table-layout:fixed}
@@ -327,7 +328,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   .brand img{width:min(220px,70vw)}
   .global-nav{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:10px 16px;transform:none;font-size:14px;line-height:1.4;white-space:normal}
   .hero{height:64vw;min-height:260px}
-  .hero h1{left:20px;top:18px;font-size:clamp(42px,12vw,80px)}
+  .hero h1{left:20px;top:18px;font-size:clamp(32px,10vw,80px);max-width:calc(100% - 40px)}
   .hours{padding:12vw 16px;overflow-x:auto}
   .hours-table-wrap{overflow-x:auto}
   .hours-table,.hours-bottom .hours-table{min-width:0;width:100%;font-size:13px;line-height:1.35}
