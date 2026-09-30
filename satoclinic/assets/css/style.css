@@ -404,19 +404,71 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   body.menu-open .mobile-drawer{transform:translateX(0)}
 }
 
+/* Header mode is selected from measured available width. */
+.site-header{visibility:hidden}
+body.nav-ready .site-header{visibility:visible}
+.site-header:not(.compact-header) .global-nav{display:flex}
+.site-header:not(.compact-header) .mobile-tools{display:none}
+.site-header.compact-header .global-nav{display:none}
+.site-header.compact-header .mobile-tools{display:flex;align-items:center;gap:5px;margin-left:auto}
+.site-header.compact-header .mobile-quick{min-width:44px;height:44px;padding:3px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;line-height:1.1;white-space:nowrap}
+.site-header.compact-header .mobile-quick span:first-child{font-size:17px;line-height:1}
+.site-header.compact-header .menu-toggle{width:44px;height:44px;padding:10px 8px;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:#fff;color:var(--deep);cursor:pointer}
+.site-header.compact-header .menu-toggle span{display:block;width:26px;height:2px;background:currentColor;border-radius:2px}
+.site-header.compact-header + .drawer-overlay{display:block;position:fixed;inset:0;z-index:1003;background:rgba(0,0,0,.28);opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease}
+.site-header.compact-header + .drawer-overlay + .mobile-drawer{display:block;position:fixed;z-index:1004;top:0;right:0;width:min(88vw,360px);height:100dvh;padding:18px;background:#fff;transform:translateX(100%);transition:transform .25s ease;overflow-y:auto}
+.site-header.compact-header + .drawer-overlay + .mobile-drawer .drawer-header{height:44px;display:flex;align-items:center;justify-content:space-between;color:var(--deep);font-size:18px;font-weight:700;border-bottom:1px solid #d7e7df}
+.site-header.compact-header + .drawer-overlay + .mobile-drawer .drawer-close{width:44px;height:44px;border:0;background:transparent;color:var(--deep);font-size:32px;cursor:pointer}
+.site-header.compact-header + .drawer-overlay + .mobile-drawer .drawer-nav{display:flex;flex-direction:column;padding-top:8px}
+.site-header.compact-header + .drawer-overlay + .mobile-drawer .drawer-nav a{min-height:52px;display:flex;align-items:center;padding:12px 6px;border-bottom:1px solid #e1eee8;color:#155f4b;font-size:16px;font-weight:600}
+body.menu-open .drawer-overlay{opacity:1;visibility:visible}
+body.menu-open .mobile-drawer{transform:translateX(0)}
+
 /* Staff role/name wrapping */
 .staff-copy,.staff-heading,.staff-name{min-width:0}
 .staff-name{width:100%;max-width:100%;white-space:nowrap;flex:1 1 auto;overflow:visible}
 .staff-name .staff-role,
 .staff-name .staff-person-name{white-space:nowrap}
-.staff-name .staff-role::after{content:"\uff1a"}
+.staff-name .staff-role::after{content:"："}
 .staff-name.is-stacked{white-space:normal}
 .staff-name.is-stacked .staff-role,
 .staff-name.is-stacked .staff-person-name{display:block}
-.staff-name.is-stacked .staff-role::after{content:none}
+.staff-name.is-stacked .staff-role::after{content:""}
+
+/* Keep the about copy inside its white panel at every width. */
+.about-band{height:auto;min-height:777px}
+.about-grid{height:auto;min-height:438px;align-items:stretch}
+.about-copy{height:auto;min-height:438px;overflow-wrap:anywhere}
+.about-copy p{overflow-wrap:anywhere}
 
 /* Swipeable photo-card groups on mobile only */
 @media (max-width: 768px){
+  .gallery{
+    width:calc(100% + 16px);
+    margin-left:-8px;
+    padding:0 8px 12px;
+    display:flex;
+    flex-wrap:nowrap;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery img{
+    flex:0 0 min(82vw,320px);
+    width:min(82vw,320px);
+    height:auto;
+    aspect-ratio:1.35;
+    object-fit:cover;
+    scroll-snap-align:start;
+  }
+
+  .about-grid{min-height:0}
+  .about-copy{min-height:0}
+
   .departments{
     position:relative;
     padding-bottom:52vw;

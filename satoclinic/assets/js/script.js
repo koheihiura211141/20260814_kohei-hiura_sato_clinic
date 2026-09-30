@@ -9,6 +9,23 @@
   if (!body || !desktopNav || !drawer || !drawerNav || !overlay || !toggle || !close) return;
 
   drawerNav.innerHTML = desktopNav.innerHTML;
+
+  var header = document.querySelector('.site-header');
+  var headerInner = document.querySelector('.header-inner');
+  function updateHeaderMode() {
+    if (!header || !headerInner) return;
+    header.classList.remove('compact-header');
+    var needsCompact = headerInner.scrollWidth > headerInner.clientWidth + 1;
+    header.classList.toggle('compact-header', needsCompact);
+    body.classList.add('nav-ready');
+  }
+  if (window.ResizeObserver && headerInner) {
+    var headerObserver = new ResizeObserver(updateHeaderMode);
+    headerObserver.observe(headerInner);
+  }
+  window.addEventListener('resize', updateHeaderMode);
+  requestAnimationFrame(updateHeaderMode);
+
   var staffNames = Array.prototype.slice.call(document.querySelectorAll('.staff-heading h3'));
   staffNames.forEach(function (name) {
     var text = name.textContent.trim();
