@@ -406,6 +406,26 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
 
 /* Swipeable photo-card groups on mobile only */
 @media (max-width: 768px){
+  .departments{
+    position:relative;
+    padding-bottom:52vw;
+    background-image:url("../images/departments.png");
+    background-repeat:no-repeat;
+    background-size:auto 33.333vw;
+    background-position:left 110px;
+  }
+  .departments>img{display:none}
+  .departments::after{
+    content:"";
+    position:absolute;
+    top:calc(110px + 33.333vw + 12px);
+    left:50%;
+    width:66.666vw;
+    height:33.333vw;
+    transform:translateX(-50%);
+    background:url("../images/departments.png") right center / auto 100% no-repeat;
+  }
+
   .medical-list,
   .staff-list{
     width:calc(100% + 16px);
