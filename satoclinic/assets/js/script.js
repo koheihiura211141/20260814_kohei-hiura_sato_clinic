@@ -6,9 +6,11 @@
   var overlay = document.querySelector('.drawer-overlay');
   var toggle = document.querySelector('.menu-toggle');
   var close = document.querySelector('.drawer-close');
-  if (!body || !desktopNav || !drawer || !drawerNav || !overlay || !toggle || !close) return;
+  // The mobile drawer must remain usable even if the desktop nav is not
+  // available while the page is being inspected in responsive mode.
+  if (!body || !drawer || !drawerNav || !overlay || !toggle || !close) return;
 
-  drawerNav.innerHTML = desktopNav.innerHTML;
+  if (desktopNav) drawerNav.innerHTML = desktopNav.innerHTML;
 
   var header = document.querySelector('.site-header');
   var headerInner = document.querySelector('.header-inner');

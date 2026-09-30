@@ -665,3 +665,35 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
     top:calc(var(--section-space) + 70px + 33.333vw + 12px);
   }
 }
+
+/* The compact header can also be selected on narrow desktop/tablet widths. */
+@media (min-width:769px){
+  body.menu-open .site-header.compact-header + .drawer-overlay{
+    display:block;
+    opacity:1;
+    visibility:visible;
+  }
+
+  body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
+    display:block;
+    transform:translateX(0);
+  }
+}
+
+/* Keep the open state reliable on both mobile and compact desktop layouts. */
+body.menu-open .drawer-overlay{
+  display:block !important;
+  opacity:1;
+  visibility:visible;
+}
+
+body.menu-open .mobile-drawer{
+  display:block !important;
+  transform:translateX(0);
+}
+
+/* Override the compact-header closed position on mobile as well. */
+body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
+  display:block !important;
+  transform:translateX(0);
+}
