@@ -51,8 +51,14 @@
       name.style.width = '100%';
       name.style.maxWidth = '100%';
       name.style.minWidth = '0';
-      if (name.scrollWidth > name.clientWidth) name.classList.add('is-stacked');
     });
+
+    var shouldStackAll = staffNames.some(function (name) {
+      return name.scrollWidth > name.clientWidth;
+    });
+    if (shouldStackAll) {
+      staffNames.forEach(function (name) { name.classList.add('is-stacked'); });
+    }
   }
   if (window.ResizeObserver) {
     var observer = new ResizeObserver(updateStaffNames);
