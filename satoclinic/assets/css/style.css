@@ -404,6 +404,17 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   body.menu-open .mobile-drawer{transform:translateX(0)}
 }
 
+/* Staff role/name wrapping */
+.staff-copy,.staff-heading,.staff-name{min-width:0}
+.staff-name{width:100%;max-width:100%;white-space:nowrap;flex:1 1 auto;overflow:visible}
+.staff-name .staff-role,
+.staff-name .staff-person-name{white-space:nowrap}
+.staff-name .staff-role::after{content:"\uff1a"}
+.staff-name.is-stacked{white-space:normal}
+.staff-name.is-stacked .staff-role,
+.staff-name.is-stacked .staff-person-name{display:block}
+.staff-name.is-stacked .staff-role::after{content:none}
+
 /* Swipeable photo-card groups on mobile only */
 @media (max-width: 768px){
   .departments{
