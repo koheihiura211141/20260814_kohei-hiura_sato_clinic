@@ -698,3 +698,73 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   display:block !important;
   transform:translateX(0);
 }
+
+/* On desktop, bring the footer band closer without moving or overlapping
+   the logo and disclaimer above it. */
+@media (min-width:1440px){
+  .site-footer{height:510px}
+}
+
+/* Standalone FAQ page */
+.faq-page{width:100%;min-width:0;overflow-x:hidden}
+.faq-page main{width:100%;background:#fff;overflow-x:hidden}
+.faq-hero-title{background:var(--mint);padding:34px 24px 35px}
+.faq-hero-title .section-title{width:min(1092px,100%);margin:0 auto;gap:100px}
+.faq-hero-title h1{margin:0;color:var(--deep);font-size:48px;line-height:1.2;white-space:nowrap}
+.faq-content{width:min(1110px,calc(100% - 48px));margin:0 auto;padding:82px 0 110px}
+.faq-intro{margin:0 0 78px;font-size:20px;line-height:1.8}
+.faq-category{margin:0 0 66px}
+.faq-category h2{display:flex;align-items:center;gap:18px;margin:0 0 15px;padding-bottom:9px;color:var(--deep);font-size:34px;line-height:1.25;border-bottom:1.5px solid #65c3a3}
+.faq-category-icon{width:50px;height:50px;flex:0 0 50px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#ddf3ea;color:#078f64;font-size:26px;font-weight:700}
+.faq-category-line{flex:1}
+.faq-category dl{margin:0}
+.faq-item{margin:0 0 12px}
+.faq-item dt,.faq-item dd{display:flex;align-items:flex-start;gap:16px;margin:0;padding:0 12px}
+.faq-item dt{min-height:56px;align-items:center;border-radius:7px;background:#e6f6ef;color:#007c5b;font-size:23px;line-height:1.4;font-weight:700}
+.faq-item dd{margin-top:3px;padding-top:2px;padding-bottom:5px;color:#333;font-size:18px;line-height:1.7}
+.faq-item dt>span,.faq-item dd>span{width:36px;height:36px;flex:0 0 36px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-weight:700}
+.faq-item dt>span{background:#078f64;color:#fff}
+.faq-item dd>span{background:#ddf3ea;color:#078f64}
+.faq-item dd p{margin:0;flex:1}
+.faq-note{margin:76px 0 0;text-align:center;font-size:16px;line-height:1.8;white-space:nowrap}
+
+@media (max-width:768px){
+  .faq-hero-title{padding:28px 16px}
+  .faq-hero-title .section-title{gap:18px;padding:0;width:100%}
+  .faq-hero-title h1{font-size:30px}
+  .faq-content{width:calc(100% - 32px);max-width:100%;padding:48px 0 70px}
+  .faq-intro{margin-bottom:48px;font-size:16px;line-height:1.8}
+  .faq-category{margin-bottom:48px}
+  .faq-category h2{gap:10px;margin-bottom:12px;padding-bottom:7px;font-size:24px;line-height:1.3}
+  .faq-category-icon{width:38px;height:38px;flex-basis:38px;font-size:20px}
+  .faq-item{margin-bottom:10px}
+  .faq-item dt,.faq-item dd{gap:10px;padding-left:4px;padding-right:4px}
+  .faq-item dt{min-height:44px;padding-top:5px;padding-bottom:5px;font-size:17px;line-height:1.4}
+  .faq-item dd{padding-top:2px;padding-bottom:4px;font-size:15px;line-height:1.65}
+  .faq-item dt>span,.faq-item dd>span{width:30px;height:30px;flex-basis:30px}
+  .faq-note{width:max-content;max-width:100%;margin:52px auto 0;font-size:14px;line-height:1.8;text-align:left;white-space:normal;overflow-wrap:anywhere}
+}
+
+/* Shared CTA sizing and horizontal alignment. */
+@media (min-width:769px){
+  .news-copy .pill,
+  .medical-button .pill,
+  .about-button{
+    width:450px;
+    height:60px;
+  }
+
+  .news-copy .pill{transform:translateX(-21px)}
+  .medical-button .pill{transform:translateX(18px)}
+}
+
+@media (max-width:768px){
+  .news-copy .pill,
+  .medical-button .pill,
+  .about-button{
+    width:100%;
+    height:52px;
+    font-size:18px;
+    transform:none;
+  }
+}
