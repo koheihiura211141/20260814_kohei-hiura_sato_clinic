@@ -1,5 +1,5 @@
 @charset "UTF-8";
-:root{--green:#078f64;--deep:#067858;--mint:#eaf6f0;--border:#55a889;--text:#111;}
+:root{--green:#078f64;--deep:#067858;--mint:#eaf6f0;--border:#55a889;--text:#333333;}
 *{box-sizing:border-box}html,body{margin:0;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;background:#fff;color:var(--text)}
 body{font-family:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",sans-serif;font-size:16px;line-height:1.7;letter-spacing:.01em}img{display:block}a{text-decoration:none;color:inherit}
 .site-header{height:106px;background:#fff;display:flex;align-items:center}.header-inner{width:1300px;height:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}.brand img{width:225px}.global-nav{display:flex;gap:38px;font-size:20px;font-weight:600;align-items:center}
