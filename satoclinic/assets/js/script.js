@@ -79,4 +79,72 @@
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && body.classList.contains('menu-open')) setMenu(false);
   });
+
+  var contactModal = document.querySelector('.contact-modal');
+  var contactOverlay = document.querySelector('.contact-overlay');
+  var contactForm = document.querySelector('.contact-form');
+  var contactFormView = document.querySelector('.contact-form-view');
+  var contactConfirmView = document.querySelector('.contact-confirm-view');
+  var contactConfirmList = document.querySelector('.contact-confirm-list');
+  var contactClose = document.querySelector('.contact-modal-close');
+  var contactEdit = document.querySelector('.contact-edit');
+  if (contactModal && contactOverlay && contactForm && contactFormView && contactConfirmView && contactConfirmList && contactClose && contactEdit) {
+    function closeContact() {
+      body.classList.remove('modal-open');
+      contactModal.hidden = true;
+      contactOverlay.hidden = true;
+      contactFormView.hidden = false;
+      contactConfirmView.hidden = true;
+    }
+    function openContact() {
+      setMenu(false);
+      body.classList.add('modal-open');
+      contactOverlay.hidden = false;
+      contactModal.hidden = false;
+      contactFormView.hidden = false;
+      contactConfirmView.hidden = true;
+      var firstInput = contactForm.querySelector('input');
+      if (firstInput) firstInput.focus();
+    }
+    document.addEventListener('click', function (event) {
+      var contactLink = event.target.closest('a[href="#contact"]');
+      if (contactLink) {
+        event.preventDefault();
+        openContact();
+      }
+    });
+    contactClose.addEventListener('click', closeContact);
+    contactOverlay.addEventListener('click', closeContact);
+    contactModal.addEventListener('click', function (event) { event.stopPropagation(); });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !contactModal.hidden) closeContact();
+    });
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+      contactConfirmList.innerHTML = '';
+      Array.prototype.forEach.call(contactForm.querySelectorAll('input, textarea'), function (field) {
+        var row = document.createElement('div');
+        var label = contactForm.querySelector('label[for="' + field.id + '"]');
+        var labelText = label ? label.textContent.replace('必須', '').trim() : field.name;
+        var dt = document.createElement('dt');
+        var dd = document.createElement('dd');
+        dt.textContent = labelText;
+        dd.textContent = field.value;
+        row.append(dt, dd);
+        contactConfirmList.append(row);
+      });
+      contactFormView.hidden = true;
+      contactConfirmView.hidden = false;
+      contactModal.scrollTop = 0;
+    });
+    contactEdit.addEventListener('click', function () {
+      contactConfirmView.hidden = true;
+      contactFormView.hidden = false;
+      contactModal.scrollTop = 0;
+    });
+  }
 })();
