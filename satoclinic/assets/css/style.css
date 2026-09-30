@@ -219,6 +219,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   height:469px;
   padding-top:31px;
 }
+
 .departments .section-title{margin-bottom:68px}
 .access{
   height:1283px;
@@ -532,5 +533,135 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
   .staff-card .staff-copy{
     order:1;
     flex:1 1 auto;
+  }
+}
+
+/* Shared section-title treatment */
+:root{
+  --section-title-margin-top:56px;
+  --section-title-margin-bottom:32px;
+}
+
+.section-title{
+  position:relative;
+  z-index:0;
+  margin:var(--section-title-margin-top) auto var(--section-title-margin-bottom);
+}
+
+.section-title::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-10px -8px;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0%,#F3FAF7 24%,#EAF6F0 50%,#F3FAF7 76%,rgba(255,255,255,0) 100%);
+  border:0;
+  border-radius:10px;
+  pointer-events:none;
+}
+
+@media (max-width:768px){
+  .section-title{
+    margin:36px auto 22px;
+  }
+
+  .section-title::before{
+    inset:-7px 8px;
+    border-radius:8px;
+  }
+}
+
+/* Keep the shared title spacing independent from section-specific padding. */
+.medical,
+.staff,
+.departments,
+.access{
+  padding-top:0;
+}
+
+.section-title h2{
+  margin:0;
+}
+
+@media (max-width:768px){
+  .medical,
+  .staff,
+  .departments,
+  .access{
+    padding-top:0;
+  }
+}
+
+/* Shared vertical rhythm for sections that use the common title component. */
+:root{
+  --section-space:160px;
+  --title-content-space:28px;
+}
+
+.medical,
+.staff,
+.departments,
+.access{
+  padding-top:var(--section-space);
+}
+
+.section-title{
+  margin:0 auto;
+}
+
+.section-title + *{
+  margin-top:var(--title-content-space);
+}
+
+@media (max-width:768px){
+  :root{
+    --section-space:104px;
+    --title-content-space:22px;
+  }
+}
+
+/* Prevent the staff lead's legacy bottom margin from adding a second gap before cards. */
+.staff-lead{
+  margin-bottom:0;
+}
+
+.staff-list{
+  margin-top:0;
+  padding-top:0;
+}
+
+/* The department image is positioned directly below its title; avoid an extra top gap. */
+.departments > .section-title + img{
+  margin-top:0;
+  padding-top:0;
+}
+
+/* The preceding staff section already provides the section boundary space. */
+.departments{
+  padding-top:0;
+}
+
+/* On desktop, match the department graphic to the section-title width and
+   let its height define the section boundary before the access section. */
+@media (min-width:769px){
+  .departments{
+    height:auto;
+    padding-bottom:0;
+  }
+
+  .departments>img{
+    width:min(1092px,calc(100% - 48px));
+    height:auto;
+  }
+}
+
+@media (max-width:768px){
+  /* Leave the two-row department content clear of the following access title. */
+  .departments{
+    padding-bottom:calc(52vw + var(--title-content-space) + 90px);
+    background-position:left calc(var(--section-space) + 70px);
+  }
+
+  .departments::after{
+    top:calc(var(--section-space) + 70px + 33.333vw + 12px);
   }
 }
