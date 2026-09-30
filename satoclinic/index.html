@@ -10,6 +10,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="./assets/css/style.css" rel="stylesheet"/>
+<script defer src="./assets/js/script.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -18,8 +19,18 @@
 <nav aria-label="メインナビゲーション" class="global-nav">
 <a href="#top">トップ</a><a href="#news">お知らせ</a><a href="#medical">診療内容</a><a href="#about">当院について</a><a href="#staff">スタッフ紹介</a><a href="#access">アクセス</a><a href="#faq">よくあるご質問</a><a href="#contact">お問い合わせ</a>
 </nav>
+<div class="mobile-tools">
+<a class="mobile-quick mobile-phone" href="tel:00-0000-0000"><span aria-hidden="true">&#9742;</span><span>&#38651;&#35441;</span></a>
+<a class="mobile-quick mobile-access" href="#access"><span aria-hidden="true">&#9678;</span><span>&#12450;&#12463;&#12475;&#12473;</span></a>
+<button aria-controls="mobile-drawer" aria-expanded="false" aria-label="menu" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
+</div>
 </div>
 </header>
+<div class="drawer-overlay" hidden></div>
+<aside aria-hidden="true" aria-label="モバイルメニュー" class="mobile-drawer" id="mobile-drawer" tabindex="-1">
+<div class="drawer-header"><span>&#12513;&#12491;&#12517;&#12540;</span><button class="drawer-close" type="button" aria-label="close">&#215;</button></div>
+<nav class="drawer-nav" aria-label="モバイルナビゲーション"></nav>
+</aside>
 <main id="top">
 <section class="hero">
 <img alt="佐藤医院 外観" src="./assets/images/hero.jpg"/>
