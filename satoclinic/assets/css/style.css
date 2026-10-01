@@ -219,7 +219,6 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   height:469px;
   padding-top:31px;
 }
-
 .departments .section-title{margin-bottom:68px}
 .access{
   height:1283px;
@@ -1011,3 +1010,128 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
     font-size:70%;
   }
 }
+
+/* Rebuild the five department cards from a shared HTML/CSS structure. */
+.departments-cards{
+  width:1092px;
+  max-width:100%;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:16px;
+}
+
+.department-html-card{
+  min-width:0;
+  height:240px;
+  box-sizing:border-box;
+  padding:20px 12px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  border:1px solid #cfeee5;
+  border-radius:14px;
+  background:#f4fcf8;
+}
+
+.department-html-card:nth-child(2){background:#fff5f7;border-color:#f6d7df}
+.department-html-card:nth-child(3){background:#f2f9ff;border-color:#cfe8fb}
+.department-html-card:nth-child(5){background:#fffaf0;border-color:#f6e3bd}
+
+.department-html-card__icon{
+  width:100px;
+  height:100px;
+  flex:0 0 100px;
+  background-image:url("../images/医療アイコンのミニマルセット.png");
+  background-repeat:no-repeat;
+  background-size:500% auto;
+  background-position:center center;
+}
+
+.department-html-card__icon--general{background-position:0 center}
+.department-html-card__icon--cardio{background-position:25% center}
+.department-html-card__icon--respiratory{background-position:50% center}
+.department-html-card__icon--checkup{background-position:75% center}
+.department-html-card__icon--lifestyle{background-position:100% center}
+
+.department-html-card h3{
+  min-height:44px;
+  margin:12px 0 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#111;
+  font-size:20px;
+  line-height:1.35;
+  font-weight:700;
+  text-align:center;
+}
+
+.department-html-card:nth-child(-n+3) h3{font-size:30px}
+.department-html-card:nth-child(4) h3,
+.department-html-card:nth-child(5) h3{font-size:16px;line-height:1.25}
+
+.department-html-card:nth-child(4) h3{
+  font-size:18px;
+  white-space:nowrap;
+}
+
+.department-html-card__line{
+  display:block;
+  width:48px;
+  height:4px;
+  flex:0 0 4px;
+  border-radius:999px;
+  background:#45bd9d;
+}
+
+.department-html-card:nth-child(2) .department-html-card__line{background:#ea6c82}
+.department-html-card:nth-child(3) .department-html-card__line{background:#1689df}
+.department-html-card:nth-child(5) .department-html-card__line{background:#f19a16}
+
+@media (max-width:768px){
+  .departments{
+    height:auto;
+    padding-bottom:40px;
+    background-image:none;
+  }
+
+  .departments::after{display:none}
+
+  .departments-cards{
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    padding:0 16px;
+    box-sizing:border-box;
+  }
+
+  .department-html-card{
+    height:224px;
+    padding:16px 10px 14px;
+  }
+
+  .department-html-card:last-child{
+    grid-column:1 / -1;
+    width:calc(50% - 6px);
+    justify-self:center;
+  }
+
+  .department-html-card__icon{
+    width:84px;
+    height:84px;
+    flex-basis:84px;
+  }
+
+  .department-html-card h3{
+    min-height:44px;
+    margin:10px 0 6px;
+    font-size:clamp(16px,4.5vw,20px);
+  }
+
+  .department-html-card:nth-child(-n+3) h3{font-size:24px}
+  .department-html-card:nth-child(4) h3,
+  .department-html-card:nth-child(5) h3{font-size:16px}
+}
+
