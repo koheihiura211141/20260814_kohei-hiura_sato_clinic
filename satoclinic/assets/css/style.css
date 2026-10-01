@@ -753,11 +753,21 @@ body.modal-open{overflow:hidden}
   /* Leave the two-row department content clear of the following access title. */
   .departments{
     padding-bottom:calc(52vw + var(--title-content-space) + 90px);
-    background-position:left calc(var(--section-space) + 70px);
+    background-position:left 132px;
   }
 
   .departments::after{
-    top:calc(var(--section-space) + 70px + 33.333vw + 12px);
+    top:calc(132px + 33.333vw + 12px);
+  }
+}
+
+@media (max-width:767px){
+  .departments{
+    background-position:left calc(10vw + 94px);
+  }
+
+  .departments::after{
+    top:calc(10vw + 94px + 33.333vw + 12px);
   }
 }
 
