@@ -947,3 +947,61 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
     transform:none;
   }
 }
+
+/* Shared inner spacing for the main card text areas. */
+:root{
+  --card-padding-pc:24px 28px;
+  --card-padding-sp:18px 16px;
+}
+
+.news-copy,
+.greeting-copy-card,
+.card-copy,
+.staff-copy,
+.about-copy{
+  padding:var(--card-padding-pc);
+}
+
+@media (max-width:768px){
+  .news-copy,
+  .greeting-copy-card,
+  .card-copy,
+  .staff-copy,
+  .about-copy{
+    padding:var(--card-padding-sp);
+  }
+}
+
+/* Reduce only the desktop vertical breathing room inside medical cards. */
+@media (min-width:769px){
+  .medical-card .card-copy{
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+
+  .medical-card .card-heading{
+    margin-bottom:16px;
+  }
+}
+
+/* Keep all desktop medical cards equally compact without per-card adjustments. */
+@media (min-width:1024px){
+  .medical-card{
+    height:307px;
+  }
+
+  .medical-card>img{
+    height:305px;
+  }
+}
+
+/* Match the desktop section-start spacing used by the neighboring sections. */
+@media (min-width:1024px){
+  .about-band{
+    padding-top:32px;
+  }
+
+  .medical{
+    height:2180px;
+  }
+}
