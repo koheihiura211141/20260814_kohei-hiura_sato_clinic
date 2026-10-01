@@ -678,6 +678,68 @@ body.modal-open{overflow:hidden}
   .greeting-photo-card div{font-size:31px}
 }
 
+/* Keep each staff member visually centered when mobile cards crop the source photos. */
+@media (max-width:768px){
+  .staff-card:nth-child(1)>img{object-position:70% 35%}
+  .staff-card:nth-child(2)>img{object-position:70% 35%}
+  .staff-card:nth-child(3)>img{object-position:50% 35%}
+  .staff-card:nth-child(4)>img{object-position:28% 35%}
+}
+
+/* Treat the about photo and copy as one card, matching the existing card treatment. */
+.about-grid{
+  grid-template-columns:445px minmax(0,1fr);
+  gap:0;
+  border:1.5px solid var(--border);
+  border-radius:26px 8px 26px 8px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 3px 4px rgba(0,0,0,.12);
+}
+
+.about-grid>img{
+  width:100%;
+  height:100%;
+  border-radius:0;
+}
+
+.about-copy{
+  height:100%;
+  min-height:0;
+  border-radius:0;
+  background:transparent;
+}
+
+@media (max-width:768px){
+  .about-grid{
+    display:block;
+    min-height:0;
+  }
+
+  .about-grid>img{
+    width:100%;
+    height:58vw;
+    min-height:0;
+    margin:0;
+  }
+
+  .about-copy{
+    height:auto;
+    padding:24px 20px;
+  }
+}
+
+/* Keep the subjects visually centered in the responsive crops. */
+@media (max-width:1439px){
+  .news-photo{object-position:75% 40%}
+  .about-grid>img{object-position:72% 40%}
+}
+
+@media (max-width:767px){
+  .news-photo{object-position:75% 40%}
+  .about-grid>img{object-position:72% 40%}
+}
+
 /* Keep the shared title spacing independent from section-specific padding. */
 .medical,
 .staff,
