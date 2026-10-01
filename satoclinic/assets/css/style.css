@@ -391,7 +391,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;bac
   .brand-name{display:inline;font-size:16px;font-weight:700;white-space:nowrap;color:var(--deep)}
   .global-nav{display:none}
   .mobile-tools{display:flex;align-items:center;gap:5px;margin-left:auto}
-  .mobile-quick{min-width:44px;height:44px;padding:3px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;border-radius:6px;font-size:11px;font-weight:600;line-height:1.1;white-space:nowrap}
+  .mobile-quick{min-width:44px;height:44px;padding:3px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;border-radius:6px;font-size:14px;font-weight:600;line-height:1.1;white-space:nowrap}
   .mobile-phone{color:#1769aa;background:#eef6fc}
   .mobile-access{color:var(--deep);background:var(--mint)}
   .mobile-quick span:first-child{font-size:17px;line-height:1}
@@ -414,7 +414,7 @@ body.nav-ready .site-header{visibility:visible}
 .site-header:not(.compact-header) .mobile-tools{display:none}
 .site-header.compact-header .global-nav{display:none}
 .site-header.compact-header .mobile-tools{display:flex;align-items:center;gap:5px;margin-left:auto}
-.site-header.compact-header .mobile-quick{min-width:44px;height:44px;padding:3px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;line-height:1.1;white-space:nowrap}
+  .site-header.compact-header .mobile-quick{min-width:44px;height:44px;padding:3px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;line-height:1.1;white-space:nowrap}
 .site-header.compact-header .mobile-quick span:first-child{font-size:17px;line-height:1}
 .site-header.compact-header .menu-toggle{width:44px;height:44px;padding:10px 8px;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:#fff;color:var(--deep);cursor:pointer}
 .site-header.compact-header .menu-toggle span{display:block;width:26px;height:2px;background:currentColor;border-radius:2px}
