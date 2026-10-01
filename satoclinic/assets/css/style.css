@@ -1005,3 +1005,9 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
     height:2180px;
   }
 }
+
+@media (max-width:767px){
+  .staff-heading h3 .staff-role{
+    font-size:70%;
+  }
+}
