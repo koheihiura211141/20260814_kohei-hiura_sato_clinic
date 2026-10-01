@@ -10,6 +10,27 @@
   // available while the page is being inspected in responsive mode.
   if (!body || !drawer || !drawerNav || !overlay || !toggle || !close) return;
 
+  var revealTargets = document.querySelectorAll(
+    '.section-title, .news-card, .greeting-photo-card, .greeting-copy-card, .medical-card, .about-grid > *, .staff-card, .department-html-card, .access-grid > *, .faq-group'
+  );
+  if ('IntersectionObserver' in window && revealTargets.length) {
+    body.classList.add('reveal-ready');
+    revealTargets.forEach(function (element, index) {
+      element.classList.add('reveal');
+      if (element.matches('.medical-card, .staff-card, .department-html-card')) {
+        element.style.setProperty('--reveal-delay', Math.min(index % 5, 4) * 80 + 'ms');
+      }
+    });
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach(function (element) { revealObserver.observe(element); });
+  }
+
   if (desktopNav) drawerNav.innerHTML = desktopNav.innerHTML;
 
   var header = document.querySelector('.site-header');

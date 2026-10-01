@@ -1052,6 +1052,50 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   }
 }
 
+/* Calm one-time reveal for content entering the viewport. */
+.reveal-ready .reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .6s ease,transform .6s ease;
+  transition-delay:var(--reveal-delay,0ms);
+}
+
+.reveal-ready .reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media (max-width:767px){
+  .reveal-ready .reveal{
+    transform:translateY(14px);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal-ready .reveal,
+  .reveal-ready .reveal.is-visible{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
+
+/* Fill the greeting photo frame with the people-focused side of the source image. */
+.greeting-photo-card img{
+  width:100%;
+  object-position:100% 50%;
+}
+
+@media (max-width:768px){
+  .medical .section-title{
+    margin-bottom:0;
+  }
+
+  .medical .section-title + .medical-list{
+    margin-top:44px;
+  }
+}
+
 /* Rebuild the five department cards from a shared HTML/CSS structure. */
 .departments-cards{
   width:1092px;
