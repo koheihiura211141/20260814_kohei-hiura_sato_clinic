@@ -1260,3 +1260,69 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   .department-html-card:nth-child(5) h3{font-size:16px}
 }
 
+/* Keep a consistent visual gap between each section heading and its content. */
+:root{
+  --section-title-content-gap:80px;
+}
+
+.medical > .section-title,
+.staff > .section-title,
+.departments > .section-title,
+.access > .section-title{
+  margin-bottom:var(--section-title-content-gap);
+}
+
+.section-title{
+  margin-bottom:var(--section-title-content-gap);
+}
+
+.faq-hero-title .section-title{
+  margin-bottom:0;
+}
+
+.news-copy > h2,
+.greeting-copy-card > h2,
+.about-copy > h2,
+.faq-category > h2{
+  margin-bottom:var(--section-title-content-gap);
+}
+
+.section-title + *{
+  margin-top:0;
+}
+
+.faq-hero-title{
+  padding-bottom:0;
+}
+
+.faq-content{
+  padding-top:var(--section-title-content-gap);
+}
+
+@media (max-width:768px){
+  .medical > .section-title + .medical-list{
+    margin-top:0;
+  }
+
+  .faq-content{
+    padding-top:var(--section-title-content-gap);
+  }
+}
+
+@media (min-width:769px){
+  .news-card{
+    height:auto;
+    min-height:748px;
+  }
+
+  .medical-list{
+    gap:64px;
+  }
+}
+
+@media (min-width:1024px){
+  .medical{
+    height:1988px;
+  }
+}
+
