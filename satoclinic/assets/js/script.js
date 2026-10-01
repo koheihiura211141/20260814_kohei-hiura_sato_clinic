@@ -42,6 +42,57 @@
     revealTargets.forEach(function (element) { revealObserver.observe(element); });
   }
 
+  function initializeCarousel(carouselSelector, dotSelector) {
+    var carousel = document.querySelector(carouselSelector);
+    var slides = carousel ? Array.prototype.slice.call(carousel.children) : [];
+    var dots = carousel ? Array.prototype.slice.call(document.querySelectorAll(dotSelector)) : [];
+    if (!carousel || !slides.length || !dots.length) return;
+
+    function setDot(index) {
+      dots.forEach(function (dot, dotIndex) {
+        var active = dotIndex === index;
+        dot.classList.toggle('is-active', active);
+        if (active) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
+      });
+    }
+
+    function updateDot() {
+      var center = carousel.scrollLeft + carousel.clientWidth / 2;
+      var closest = 0;
+      var distance = Infinity;
+      slides.forEach(function (slide, index) {
+        var slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        var difference = Math.abs(slideCenter - center);
+        if (difference < distance) {
+          distance = difference;
+          closest = index;
+        }
+      });
+      setDot(closest);
+    }
+
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        var slide = slides[index];
+        var targetLeft = slide.offsetLeft - (carousel.clientWidth - slide.offsetWidth) / 2;
+        var maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        carousel.scrollTo({
+          left: Math.max(0, Math.min(maxScrollLeft, targetLeft)),
+          behavior: 'smooth'
+        });
+        setDot(index);
+      });
+    });
+    carousel.addEventListener('scroll', updateDot, { passive: true });
+    window.addEventListener('resize', updateDot);
+    updateDot();
+  }
+
+  initializeCarousel('.gallery', '.gallery-carousel .carousel-dot');
+  initializeCarousel('.medical-list', '.medical-carousel .carousel-dot');
+  initializeCarousel('.staff-list', '.staff-carousel .carousel-dot');
+
   if (desktopNav) drawerNav.innerHTML = desktopNav.innerHTML;
 
   var header = document.querySelector('.site-header');

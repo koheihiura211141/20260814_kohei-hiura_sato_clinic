@@ -65,9 +65,9 @@
 <li>※祝祭日も診療を行っておりますが、休診日もございますので、事前にご確認ください。</li>
 </ul>
 </section>
-<section aria-label="院内写真" class="gallery">
+<div class="gallery-carousel"><section aria-label="院内写真" class="gallery">
 <img alt="院内廊下" src="./assets/images/gallery_1.jpg"/><img alt="中庭" src="./assets/images/gallery_2.jpg"/><img alt="診察室" src="./assets/images/gallery_3.jpg"/>
-</section>
+</section><div class="carousel-dots" aria-label="院内写真のページ選択"><button class="carousel-dot is-active" type="button" aria-label="1枚目を表示" aria-current="true"></button><button class="carousel-dot" type="button" aria-label="2枚目を表示"></button><button class="carousel-dot" type="button" aria-label="3枚目を表示"></button></div></div>
 <section class="news-wrap" id="news">
 <div class="news-card">
 <img alt="医師" class="news-photo" src="./assets/images/news.jpg"/>
@@ -103,7 +103,7 @@
 </section>
 <section class="medical" id="medical">
 <div class="section-title"><span></span><h2>診療内容</h2><span></span></div>
-<div class="medical-list">
+<div class="card-carousel medical-carousel"><div class="medical-list">
 <article class="medical-card photo-left">
 <img alt="一般内科診療" src="./assets/images/medical_general.jpg"/>
 <div class="card-copy"><div class="card-heading"><img alt="" src="./assets/images/icon_general.png"/><h3>一般内科診療</h3></div><p>風邪や発熱、喉の痛み、頭痛、腹痛などの症状を中心に、一般的な体調不良の診療を行っています。また、原因不明の不調や軽い症状であっても、早期診断に努めております。</p></div>
@@ -120,7 +120,7 @@
 <div class="card-copy"><div class="card-heading"><img alt="" src="./assets/images/icon_respiratory.png"/><h3>呼吸器系の診療</h3></div><p>咳、息切れ、胸の痛みなど、呼吸器系の症状について診療を行っています。季節性の喘息やアレルギー性鼻炎、慢性閉塞性肺疾患（COPD）などにも対応し、適切な治療と予防をサポートします。</p></div>
 <img alt="呼吸器系の診療" src="./assets/images/medical_respiratory.jpg"/>
 </article>
-</div>
+</div><div class="carousel-dots" aria-label="診療内容のページ選択"><button class="carousel-dot is-active" type="button" aria-label="1枚目を表示" aria-current="true"></button><button class="carousel-dot" type="button" aria-label="2枚目を表示"></button><button class="carousel-dot" type="button" aria-label="3枚目を表示"></button><button class="carousel-dot" type="button" aria-label="4枚目を表示"></button></div></div>
 <div class="medical-button"><a class="pill" href="#departments">その他の診療科目</a></div>
 </section>
 <section class="about-band" id="about">
@@ -133,12 +133,12 @@
 <section class="staff" id="staff">
 <div class="section-title"><span></span><h2>スタッフ紹介</h2><span></span></div>
 <p class="staff-lead">地域の皆様に安心してご来院いただけるよう、スタッフ一同、誠心誠意対応いたします。<br/>それぞれの専門性と温かさを活かし、皆様の健康を支えるパートナーとしてお力になれる<br/>よう努めてまいります。</p>
-<div class="staff-list">
+<div class="card-carousel staff-carousel"><div class="staff-list">
 <article class="staff-card photo-left"><img alt="院長 佐藤太郎" src="./assets/images/staff_director.jpg"/><div class="staff-copy"><div class="staff-heading"><img alt="" src="./assets/images/icon_director.png"/><h3><span class="staff-role">院長：</span>佐藤 太郎</h3></div><ul><li>経歴：光明大学医学部卒業後、瑞穂中央総合病院で内科医として10年間勤務。その後、地域医療への貢献を目指し、佐藤医院を開院。</li><li>専門分野：生活習慣病、呼吸器疾患、内科全般</li><li>コメント：患者様にとって気軽に相談できる「かかりつけ医」を目指しています。どんな小さな不安でも、まずはご相談ください。</li></ul></div></article>
 <article class="staff-card photo-right"><div class="staff-copy"><div class="staff-heading"><img alt="" src="./assets/images/icon_nurse.png"/><h3><span class="staff-role">看護師長：</span>鈴木 真理</h3></div><ul><li>経歴：白桜大学看護学部卒業後、緑が丘大学病院で10年勤務。地域医療に携わりたい思いから、佐藤医院に入職。</li><li>得意分野：親身な対応、注射・採血技術、健康管理指導</li><li>メッセージ：安心して治療を受けていただけるよう、いつも笑顔でお待ちしています。些細なことでもお気軽にご相談ください。</li></ul></div><img alt="看護師長 鈴木真理" src="./assets/images/staff_nurse.jpg"/></article>
 <article class="staff-card photo-left"><img alt="臨床検査技師 高橋由美" src="./assets/images/staff_lab.jpg"/><div class="staff-copy"><div class="staff-heading"><img alt="" src="./assets/images/icon_lab.png"/><h3><span class="staff-role">臨床検査技師：</span>高橋 由美</h3></div><ul><li>経歴：東都臨床検査技術専門学校を卒業後、武蔵中央医療センターにて15年間の臨床検査技師としての経験を積む。</li><li>得意分野：血液検査、心電図検査、超音波検査</li><li>コメント：検査は不安が伴うこともありますが、できるだけリラックスしていただけるよう、優しく丁寧な対応を心がけています。</li></ul></div></article>
 <article class="staff-card photo-right"><div class="staff-copy"><div class="staff-heading"><img alt="" src="./assets/images/icon_clerk.png"/><h3><span class="staff-role">医療事務：</span>山本 花</h3></div><ul><li>経歴：希望医療カレッジ卒業後、さくら診療所にて受付業務を担当。現在は佐藤医院で患者様対応を担当。</li><li>得意分野：受付業務、カルテ管理、医療費計算</li><li>コメント：皆様に気持ちよくご利用いただけるよう、笑顔と真心を大切にしております。初めての方もどうぞ安心してお越しください。</li></ul></div><img alt="医療事務 山本花" src="./assets/images/staff_clerk.jpg"/></article>
-</div>
+</div><div class="carousel-dots" aria-label="スタッフ紹介のページ選択"><button class="carousel-dot is-active" type="button" aria-label="1枚目を表示" aria-current="true"></button><button class="carousel-dot" type="button" aria-label="2枚目を表示"></button><button class="carousel-dot" type="button" aria-label="3枚目を表示"></button><button class="carousel-dot" type="button" aria-label="4枚目を表示"></button></div></div>
 </section>
 <section class="departments" id="departments"><div class="section-title"><span></span><h2>診療科目</h2><span></span></div><div class="departments-cards"><article class="department-html-card"><div class="department-html-card__icon department-html-card__icon--general" aria-hidden="true"></div><h3>内科</h3><span class="department-html-card__line"></span></article><article class="department-html-card"><div class="department-html-card__icon department-html-card__icon--cardio" aria-hidden="true"></div><h3>循環器科</h3><span class="department-html-card__line"></span></article><article class="department-html-card"><div class="department-html-card__icon department-html-card__icon--respiratory" aria-hidden="true"></div><h3>呼吸器科</h3><span class="department-html-card__line"></span></article><article class="department-html-card"><div class="department-html-card__icon department-html-card__icon--checkup" aria-hidden="true"></div><h3>予防医療・健康診断</h3><span class="department-html-card__line"></span></article><article class="department-html-card"><div class="department-html-card__icon department-html-card__icon--lifestyle" aria-hidden="true"></div><h3>生活習慣病（高血圧、糖尿病等）の治療・管理</h3><span class="department-html-card__line"></span></article></div></section><section class="access" id="access">
 <div class="section-title"><span></span><h2>アクセス</h2><span></span></div>

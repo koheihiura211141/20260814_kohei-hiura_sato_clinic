@@ -444,10 +444,14 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
 .about-copy p{overflow-wrap:anywhere}
 
 /* Swipeable photo-card groups on mobile only */
+.gallery-carousel,.card-carousel{position:relative}
+.carousel-dots{display:none}
+
 @media (max-width: 768px){
   .gallery{
     width:calc(100% + 16px);
     margin-left:-8px;
+    position:relative;
     padding:0 8px 12px;
     display:flex;
     flex-wrap:nowrap;
@@ -465,7 +469,58 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
     height:auto;
     aspect-ratio:1.35;
     object-fit:cover;
-    scroll-snap-align:start;
+    scroll-snap-align:center;
+  }
+
+  .gallery img:first-child{
+    margin-left:calc((100% - 16px - min(82vw,320px)) / 2);
+  }
+
+  .gallery img:last-of-type{
+    margin-right:calc((100% - 16px - min(82vw,320px)) / 2);
+  }
+
+  .carousel-dots{
+    position:static;
+    width:100%;
+    margin-top:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+  }
+
+  .carousel-dot{
+    width:44px;
+    height:44px;
+    display:grid;
+    place-items:center;
+    padding:0;
+    border:0;
+    border-radius:50%;
+    background:transparent;
+    cursor:pointer;
+  }
+
+  .carousel-dot::before{
+    content:"";
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#DCE7E2;
+    transition:background-color .2s ease,box-shadow .2s ease;
+  }
+
+  .carousel-dot.is-active::before{
+    background:#2E9B68;
+    box-shadow:0 0 0 8px rgba(46,155,104,.1);
+  }
+
+  .carousel-dot:hover::before{background:#b8d1c5}
+  .carousel-dot.is-active:hover::before{background:#2E9B68}
+  .carousel-dot:focus-visible{
+    outline:2px solid #2E8B7F;
+    outline-offset:1px;
   }
 
   .about-grid{min-height:0}
@@ -519,7 +574,15 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
     min-height:0;
     display:flex;
     flex-direction:column;
-    scroll-snap-align:start;
+    scroll-snap-align:center;
+  }
+  .medical-card:first-child,
+  .staff-card:first-child{
+    margin-left:calc((100% - 16px - min(82vw,320px)) / 2);
+  }
+  .medical-card:last-child,
+  .staff-card:last-child{
+    margin-right:calc((100% - 16px - min(82vw,320px)) / 2);
   }
   .medical-card>img,
   .staff-card>img{
@@ -933,7 +996,8 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 .faq-intro{margin:0 0 78px;font-size:20px;line-height:1.8}
 .faq-category{margin:0 0 66px}
 .faq-category h2{display:flex;align-items:center;gap:18px;margin:0 0 15px;padding-bottom:9px;color:var(--deep);font-size:34px;line-height:1.25;border-bottom:1.5px solid #65c3a3}
-.faq-category-icon{width:50px;height:50px;flex:0 0 50px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#ddf3ea;color:#078f64;font-size:26px;font-weight:700}
+.faq-category-icon{width:50px;height:50px;flex:0 0 50px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:transparent;color:#078f64;font-size:0;font-weight:700}
+.faq-category-icon img{display:block;width:100%;height:100%;object-fit:contain}
 .faq-category-line{flex:1}
 .faq-category dl{margin:0}
 .faq-item{margin:0 0 12px}
@@ -1507,7 +1571,7 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   }
 
   .news-copy li{
-    grid-template-columns:3px 28px minmax(0,1fr) 9px;
+    grid-template-columns:3px 28px minmax(0,1fr) 15px;
     column-gap:6px;
     padding:12px 4px;
     font-size:13px;
