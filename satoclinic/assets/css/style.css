@@ -3,7 +3,7 @@
 *{box-sizing:border-box}html,body{margin:0;padding:0;width:1440px;min-width:1440px;overflow-x:hidden;background:#fff;color:var(--text)}
 body{font-family:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",sans-serif;font-size:16px;line-height:1.7;letter-spacing:.01em}img{display:block}a{text-decoration:none;color:inherit}
 .site-header{height:106px;background:#fff;display:flex;align-items:center}.header-inner{width:1300px;height:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}.brand img{width:225px}.global-nav{display:flex;gap:38px;font-size:20px;font-weight:600;align-items:center}
-.hero{height:901px;position:relative;overflow:hidden}.hero>img{width:100%;height:100%;object-fit:cover;object-position:center}.hero h1{position:absolute;left:52px;top:30px;margin:0;color:#fff;font-family:"Noto Serif CJK JP","Yu Mincho",serif;font-size:100px;line-height:1.28;font-weight:500;letter-spacing:.035em;text-shadow:0 2px 8px rgba(0,0,0,.12)}
+.hero{height:901px;position:relative;overflow:hidden}.hero>img{width:100%;height:100%;object-fit:cover;object-position:center}.hero h1{position:absolute;left:52px;top:30px;margin:0;color:#fff;font-family:"Noto Serif CJK JP","Yu Mincho",serif;font-size:100px;line-height:1.28;font-weight:500;letter-spacing:.035em;text-shadow:0 1px 3px rgba(30,45,50,.22)}
 .hours{height:697px;padding-top:130px}.hours-table{width:1140px;margin:0 auto;border-collapse:collapse;table-layout:fixed;font-size:26px}.hours-table th,.hours-table td{height:97px;border:3px solid #333;text-align:center;padding:6px}.hours-table thead th{background:#eaf6f0;font-weight:500}.hours-table th:first-child{width:240px}.hours-table tbody th{font-weight:400;line-height:1.25}.hours-table tbody th span{font-size:24px}.hours-notes{width:1140px;margin:20px auto 0;padding-left:30px;font-size:23px;line-height:1.7}
 .gallery{height:312px;display:grid;grid-template-columns:repeat(3,1fr);gap:21px}.gallery img{width:100%;height:312px;object-fit:cover}.gallery img:nth-child(1){object-position:center}.gallery img:nth-child(2){object-position:center}.gallery img:nth-child(3){object-position:center}
 .news-wrap{height:924px;padding-top:92px}.news-card{width:1140px;height:748px;margin:0 auto;border:1px solid #d7e7df;border-radius:30px 8px 30px 8px;box-shadow:0 4px 3px rgba(0,0,0,.2);padding:42px 50px;display:grid;grid-template-columns:359px 1fr;gap:80px;align-items:start}.news-photo{width:359px;height:600px;object-fit:cover;object-position:50% 50%}.news-copy{padding-top:12px}.news-copy h2{font-size:42px;line-height:1.2;margin:0 0 40px;font-weight:700}.news-copy ol{margin:0;padding-left:40px;font-size:27px;line-height:1.65}.news-copy li{border-bottom:1px solid #555;padding:9px 0}.pill{display:flex;align-items:center;justify-content:center;border:1.5px solid #333;border-radius:999px;background:#edf8f3;box-shadow:0 4px 4px rgba(0,0,0,.18);font-size:26px;height:60px}.news-copy .pill{width:450px;margin:35px 0 0 auto}
@@ -576,7 +576,9 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
 body.modal-open{overflow:hidden}
 .contact-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.35)}
 .contact-modal{position:fixed;z-index:1101;top:50%;left:50%;width:min(800px,calc(100% - 48px));max-height:calc(100vh - 48px);overflow-y:auto;transform:translate(-50%,-50%);padding:42px 54px 48px;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.contact-modal-close{position:absolute;top:14px;right:16px;width:42px;height:42px;border:0;background:transparent;color:var(--deep);font-size:34px;line-height:1;cursor:pointer}
+.contact-modal-leaf{position:absolute;z-index:0;top:-12px;right:-28px;width:300px;height:auto;max-width:none;pointer-events:none;user-select:none}
+.contact-modal-close{position:absolute;z-index:2;top:14px;right:16px;width:42px;height:42px;border:0;background:transparent;color:var(--deep);font-size:34px;line-height:1;cursor:pointer}
+.contact-modal-heading,.contact-form-view,.contact-confirm-view{position:relative;z-index:1}
 .contact-modal-heading{text-align:center;color:var(--deep)}
 .contact-modal-heading>span{display:block;margin-bottom:5px;color:#55a889;font-size:14px;letter-spacing:.28em}
 .contact-modal-heading h2{margin:0;font-size:36px;line-height:1.25}
@@ -661,8 +663,13 @@ body.modal-open{overflow:hidden}
 
 @media (max-width:768px){
   .contact-modal{width:calc(100% - 24px)}
+  .contact-modal-leaf{width:230px;top:-8px;right:-24px;opacity:.9}
   .contact-phone-line{font-size:28px;gap:9px;letter-spacing:.04em}
   .contact-phone-line span{font-size:32px}
+}
+
+@media (max-width:480px){
+  .contact-modal-leaf{width:180px;opacity:.55}
 }
 
 /* Keep the shared title spacing independent from section-specific padding. */
