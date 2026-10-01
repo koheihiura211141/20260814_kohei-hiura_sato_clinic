@@ -10,6 +10,17 @@
   // available while the page is being inspected in responsive mode.
   if (!body || !drawer || !drawerNav || !overlay || !toggle || !close) return;
 
+  var greetingToggle = document.querySelector('.greeting-copy-toggle');
+  var greetingMore = document.querySelector('#director-message-more');
+  if (greetingToggle && greetingMore) {
+    greetingToggle.addEventListener('click', function () {
+      var expanded = greetingToggle.getAttribute('aria-expanded') === 'true';
+      greetingToggle.setAttribute('aria-expanded', String(!expanded));
+      greetingMore.classList.toggle('is-expanded', !expanded);
+      greetingToggle.innerHTML = (!expanded ? '閉じる ' : '全文を表示 ') + '<span aria-hidden="true">' + (!expanded ? '▲' : '▼') + '</span>';
+    });
+  }
+
   var revealTargets = document.querySelectorAll(
     '.section-title, .news-card, .greeting-photo-card, .greeting-copy-card, .medical-card, .about-grid > *, .staff-card, .department-html-card, .access-grid > *, .faq-group'
   );

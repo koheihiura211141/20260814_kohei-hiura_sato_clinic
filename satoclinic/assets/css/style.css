@@ -571,6 +571,46 @@ body.menu-open .mobile-drawer{transform:translateX(0)}
   }
 }
 
+.greeting-copy-toggle{
+  display:none;
+}
+
+.greeting-copy-more{
+  display:block;
+}
+
+@media (max-width:767px){
+  .greeting-copy-more{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+  }
+
+  .greeting-copy-more.is-expanded{
+    max-height:1200px;
+  }
+
+  .greeting-copy-toggle{
+    display:block;
+    margin:18px auto 0;
+    padding:10px 16px;
+    border:0;
+    border-radius:8px;
+    background:#eef7f1;
+    color:#2f8f5b;
+    font:inherit;
+    font-size:14px;
+    line-height:1.4;
+    cursor:pointer;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .greeting-copy-more{
+    transition:none;
+  }
+}
+
 /* Contact form modal */
 body.modal-open{overflow:hidden}
 .contact-overlay{position:fixed;inset:0;z-index:1100;background:rgba(0,0,0,.35)}
