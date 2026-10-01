@@ -1011,6 +1011,47 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   }
 }
 
+/* Desktop navigation: restrained separators and a gentle current-page state. */
+@media (min-width:768px){
+  .site-header{
+    border-bottom:1px solid #e9efec;
+  }
+
+  .global-nav{
+    gap:0;
+    color:#2f3a36;
+  }
+
+  .global-nav a{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    padding:0 16px;
+    transition:background-color .2s ease,color .2s ease;
+  }
+
+  .global-nav a + a{
+    border-left:1px solid #d9e3de;
+  }
+
+  .global-nav a:hover,
+  .global-nav a:focus-visible{
+    background:#f4faf6;
+    color:#2f8f5b;
+  }
+
+  .global-nav a.is-active{
+    border:1px solid #dceadf;
+    border-radius:12px;
+    background:#eef7f1;
+    color:#2f8f5b;
+  }
+
+  .global-nav a.is-active + a{
+    border-left-color:transparent;
+  }
+}
+
 /* Rebuild the five department cards from a shared HTML/CSS structure. */
 .departments-cards{
   width:1092px;
