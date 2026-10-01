@@ -711,10 +711,10 @@ body.modal-open{overflow:hidden}
   .contact-modal-leaf{width:180px;opacity:.55}
 }
 
-.greeting-photo-card div{font-family:"Yuji Syuku",serif;font-size:39px}
+.greeting-photo-card div{color:#000;font-family:"Yuji Syuku",serif;font-size:58.5px}
 
 @media (max-width:767px){
-  .greeting-photo-card div{font-size:31px}
+  .greeting-photo-card div{font-size:46.5px}
 }
 
 /* Keep each staff member visually centered when mobile cards crop the source photos. */
@@ -1323,6 +1323,37 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 @media (min-width:1024px){
   .medical{
     height:1988px;
+  }
+}
+
+@media (min-width:769px){
+  .greeting-photo-card{
+    height:568px;
+  }
+
+  .greeting-photo-card div{
+    height:120px;
+    padding:0;
+  }
+}
+
+@media (max-width:768px){
+  .greeting-photo-card div{
+    height:100px;
+    padding:0;
+  }
+}
+
+@media (max-width:767px){
+  .greeting-photo-card div{
+    display:none;
+  }
+
+  .greeting-photo-card{
+    height:auto;
+    background:#fff;
+    border-radius:26px;
+    overflow:hidden;
   }
 }
 
