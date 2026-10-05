@@ -1839,3 +1839,97 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 @media (min-width:1440px){
   .hero h1{left:max(50px,calc((100% - 1340px)/2));}
 }
+
+/* Access section: one restrained card containing both the map and information. */
+.access-panel{
+  width:1094px;
+  padding:16px;
+  gap:34px;
+  border:1px solid #dcebe3;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.04);
+  overflow:hidden;
+}
+.access-info{
+  align-self:stretch;
+  padding:32px 34px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.access-info .access-info-section h3{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:0 0 14px;
+  padding:0 0 12px;
+  border-bottom:1px solid #afcfbe;
+  color:#333;
+  font-size:28px;
+  line-height:1.25;
+  font-weight:600;
+}
+.access-heading-icon{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#55a889;
+  color:#fff;
+}
+.access-heading-icon svg{width:23px;height:23px;fill:currentColor}
+.access-info .access-address{
+  margin:0;
+  color:#333;
+  font-size:19px;
+  line-height:1.65;
+}
+.access-contact-section{margin-top:28px}
+.access-contact-list{display:grid;gap:7px}
+.access-info .access-contact-list p{
+  min-width:0;
+  display:grid;
+  grid-template-columns:32px minmax(0,1fr);
+  align-items:center;
+  gap:12px;
+  margin:0;
+  padding:4px 0 8px;
+  border-bottom:1px solid #e5eee9;
+  color:#333;
+  font-size:18px;
+  line-height:1.5;
+}
+.access-info .access-contact-list p:last-child{border-bottom:0;padding-bottom:0}
+.access-contact-list p>span:last-child{min-width:0;overflow-wrap:anywhere}
+.access-grid figure figcaption{text-align:center}
+.access-contact-icon{
+  width:32px;
+  height:32px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#eaf6f0;
+  color:#067858;
+}
+.access-contact-icon svg{width:17px;height:17px;fill:currentColor}
+
+@media (max-width:767px){
+  .access-panel{width:100%}
+  .access-panel{padding:12px}
+  .access-info{width:100%;padding:26px 20px}
+  .access-info .access-info-section h3{font-size:23px}
+  .access-heading-icon{width:40px;height:40px;flex-basis:40px}
+  .access-heading-icon svg{width:21px;height:21px}
+  .access-info .access-address{font-size:16px}
+  .access-info .access-contact-list p{font-size:16px;gap:10px}
+}
+
+@media (min-width:768px) and (max-width:1439px){
+  .access-panel{width:100%;gap:2.1vw}
+}
