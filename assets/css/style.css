@@ -1982,7 +1982,7 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   align-items:center;
   justify-content:center;
   width:100%;
-  max-width:560px;
+  max-width:640px;
   margin-inline:auto;
   row-gap:14px;
 }
