@@ -2247,6 +2247,47 @@ body.about-page .site-footer{width:100%;}
   background:#eaf6f0;
 }
 .about-principles img{display:block;width:100%;height:auto;}
+.philosophy-mobile{display:none;}
+.about-future{
+  width:min(calc(100vw - 32px),1060px);
+  box-sizing:border-box;
+  margin:32px auto 0;
+  padding:20px 40px;
+  border:1px solid #e0eee7;
+  border-radius:10px;
+  background:#f3faf6;
+  box-shadow:0 2px 8px rgba(32,78,58,.05);
+}
+.about-future__inner{
+  display:grid;
+  grid-template-columns:minmax(0,28%) minmax(0,1fr);
+  align-items:center;
+  gap:28px;
+}
+.about-future__illustration{
+  display:block;
+  width:min(100%,200px);
+  height:auto;
+  justify-self:center;
+}
+.about-future__copy{min-width:0;max-width:720px;}
+.about-future__copy h2{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:0 0 12px;
+  color:#333;
+  font-size:29px;
+  font-weight:700;
+  line-height:1.35;
+}
+.about-future__copy h2 span{
+  flex:1 1 auto;
+  min-width:28px;
+  height:1px;
+  background:#55a889;
+}
+.about-future__copy p{margin:0;font-size:17px;line-height:1.95;overflow-wrap:anywhere;}
 @media (max-width:768px){
   .about-main{padding-bottom:48px;}
   .about-page-title{min-height:88px;}
@@ -2270,4 +2311,24 @@ body.about-page .site-footer{width:100%;}
   .about-row.is-reversed .about-row__copy{align-self:stretch;width:100%;padding:18px 20px 22px;}
   .about-row__copy h2{font-size:24px;gap:12px;}
   .about-row__copy p{font-size:16px;line-height:1.8;}
+  .about-future{margin-top:24px;padding:12px 20px;}
+  .about-future__inner{grid-template-columns:minmax(0,1fr);gap:8px;}
+  .about-future__illustration{width:140px;}
+  .about-future__copy h2{margin-bottom:8px;font-size:24px;gap:12px;}
+  .about-future__copy p{font-size:15px;line-height:1.7;}
+  .about-principles{box-sizing:border-box;padding:24px 16px;background:#f3faf6;}
+  .about-principles img.philosophy-pc{display:none;}
+  .philosophy-mobile{display:block;width:100%;max-width:560px;margin-inline:auto;color:#333;}
+  .philosophy-mobile>h2{margin:0 0 18px;text-align:center;color:#333;font-size:23px;font-weight:700;line-height:1.4;}
+  .philosophy-mobile>h2::after{content:"";display:block;width:48px;height:2px;margin:10px auto 0;background:#55a889;}
+  .philosophy-mobile svg{fill:none;stroke:#078f64;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .philosophy-mobile__patient-first{display:flex;flex-direction:column;align-items:center;margin:0 0 20px;text-align:center;}
+  .philosophy-mobile__patient-first svg{width:48px;height:48px;}
+  .philosophy-mobile__patient-first svg path:first-child{fill:#dff3e9;}
+  .philosophy-mobile__patient-first p{margin:4px 0 0;color:#2f6f5a;font-size:20px;font-weight:700;line-height:1.4;}
+  .philosophy-mobile__cards{display:grid;gap:14px;}
+  .philosophy-card{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:center;gap:12px;min-width:0;padding:16px;border:1px solid #dcebe3;border-radius:12px;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.035);}
+  .philosophy-card__icon{display:block;width:48px;height:48px;}
+  .philosophy-card h3{margin:0 0 5px;color:#2f6f5a;font-size:18px;font-weight:700;line-height:1.4;overflow-wrap:anywhere;}
+  .philosophy-card p{margin:0;color:#333;font-size:15px;line-height:1.75;overflow-wrap:anywhere;}
 }
