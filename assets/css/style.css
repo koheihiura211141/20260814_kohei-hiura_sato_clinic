@@ -1212,7 +1212,10 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 /* Match the desktop section-start spacing used by the neighboring sections. */
 @media (min-width:1024px){
   .about-band{
+    height:auto;
+    min-height:0;
     padding-top:32px;
+    padding-bottom:32px;
   }
 
   .medical{
