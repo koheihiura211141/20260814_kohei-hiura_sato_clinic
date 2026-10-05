@@ -1743,14 +1743,14 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   display:grid;
   grid-template-columns:repeat(12, minmax(0, 1fr));
   gap:24px;
-  align-items:stretch;
+  align-items:start;
 }
 .medical-service-card{grid-column:span 3;}
 .medical-service-card:nth-child(5){grid-column:2 / span 3;}
 .medical-service-card:nth-child(6){grid-column:5 / span 3;}
 .medical-service-card:nth-child(7){grid-column:8 / span 3;}
 .medical-service-card{
-  height:448px;
+  height:auto;
   padding:24px;
   display:flex;
   flex-direction:column;
@@ -1794,7 +1794,7 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 @media (max-width:1100px){
   .medical-services-grid{grid-template-columns:repeat(2, minmax(0, 1fr));}
   .medical-service-card,.medical-service-card:nth-child(5),.medical-service-card:nth-child(6),.medical-service-card:nth-child(7){grid-column:auto;}
-  .medical-service-card{height:448px;}
+  .medical-service-card{height:auto;}
 }
 @media (max-width:767px){
   .medical-services-main{
@@ -2111,4 +2111,16 @@ main > :last-child{margin-bottom:0;}
 }
 @media (max-width:480px){
   :root{--footer-gap:96px;}
+}
+
+/* Match desktop and tablet service cards to the tallest card. */
+@media (min-width:768px){
+  body.medical-services-page .medical-services-grid{
+    align-items:stretch;
+    grid-auto-rows:1fr;
+  }
+  body.medical-services-page .medical-services-grid > .medical-service-card{
+    height:100%;
+    align-self:stretch;
+  }
 }
