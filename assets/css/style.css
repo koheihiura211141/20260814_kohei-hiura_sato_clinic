@@ -103,7 +103,7 @@ body{font-family:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",sans-serif;font-s
 
 /* 2026-09-29 native Figma 1440px matching pass */
 html{margin:0;padding:0;width:100%;min-width:1440px;overflow-x:auto;background:#fff}
-body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:clip;background:#fff}
+body{margin:0;padding:0;width:100%;min-width:0;overflow-x:clip;background:#fff}
 
 /* Header */
 .header-inner{width:1324px}
@@ -233,7 +233,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:clip;backg
 
 /* 2026-09-29 header revision: FAQ and contact links added in Figma */
 .site-header{height:106px}
-.header-inner{width:1340px;margin:0 auto}
+.header-inner{width:min(calc(100% - 48px),1340px);margin:0 auto}
 .brand{transform:translate(0,7px);flex:0 0 auto}
 .brand img{width:268px}
 .global-nav{
@@ -252,6 +252,7 @@ body{margin:0 auto;padding:0;width:1440px;min-width:1440px;overflow-x:clip;backg
 
 /* 2026-09-30 footer disclaimer placement */
 .site-footer{
+  width:100%;
   height:670px;
   padding-top:244px;
   flex-direction:column;
@@ -1830,4 +1831,11 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
   #news,#medical,#about,#staff,#access{
     scroll-margin-top:64px;
   }
+}
+
+/* Let the shared outer bands span the viewport while keeping content centered. */
+.site-header,.hero,.site-footer{width:100%;}
+
+@media (min-width:1440px){
+  .hero h1{left:max(50px,calc((100% - 1340px)/2));}
 }
