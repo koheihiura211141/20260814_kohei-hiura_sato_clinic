@@ -1470,7 +1470,7 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 }
 
 .faq-hero-title{
-  padding-bottom:0;
+  padding-bottom:34px;
 }
 
 .faq-content{
@@ -1478,6 +1478,10 @@ body.menu-open .site-header.compact-header + .drawer-overlay + .mobile-drawer{
 }
 
 @media (max-width:768px){
+  .faq-hero-title{
+    padding-bottom:28px;
+  }
+
   .medical > .section-title + .medical-list{
     margin-top:0;
   }
